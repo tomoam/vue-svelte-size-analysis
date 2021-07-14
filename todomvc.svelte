@@ -86,7 +86,7 @@
 
 	<ul class="todo-list">
 		{#each filtered as item, index (item.id)}
-			<li class="{item.completed ? 'completed' : ''} {editing === index ? 'editing' : ''}">
+			<li class:completed={item.completed} class:editing={editing === index}>
 				<div class="view">
 					<input class="toggle" type="checkbox" bind:checked={item.completed}>
 					<label on:dblclick="{() => editing = index}">{item.title}</label>
@@ -112,9 +112,9 @@
 		</span>
 
 		<ul class="filters">
-			<li><a class="{currentFilter === 'all' ? 'selected' : ''}" href="#/">All</a></li>
-			<li><a class="{currentFilter === 'active' ? 'selected' : ''}" href="#/active">Active</a></li>
-			<li><a class="{currentFilter === 'completed' ? 'selected' : ''}" href="#/completed">Completed</a></li>
+			<li><a class:selected={currentFilter === 'all'} href="#/">All</a></li>
+			<li><a class:selected={currentFilter === 'active'} href="#/active">Active</a></li>
+			<li><a class:selected={currentFilter === 'completed'} href="#/completed">Completed</a></li>
 		</ul>
 
 		<button class="clear-completed" on:click={clearCompleted} style={numCompleted ? "" : "display:none;"}>
