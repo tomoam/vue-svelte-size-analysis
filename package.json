@@ -1,7 +1,13 @@
 {
   "private": true,
   "workspaces": [
+    "svelte-js_fw_benchmark",
     "svelte-todomvc",
-    "vue-todomvc"
+    "svelte-todomvc-80",
+    "svelte-todomvc-js_fw_benchmark",
+    "vue-js_fw_benchmark",
+    "vue-todomvc",
+    "vue-todomvc-80",
+    "vue-todomvc-js_fw_benchmark"
   ]
 }
